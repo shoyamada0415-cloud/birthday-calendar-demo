@@ -7,7 +7,8 @@ import {fileURLToPath} from 'node:url';
 const root=new URL('../',import.meta.url);
 const rootPath=fileURLToPath(root);
 const text=/\.(?:html|css|js|mjs|json|webmanifest|md|yml|yaml|txt|pb)$/i;
-const ignored=new Set(['node_modules','dist','test-artifacts']);
+// checkoutが作るVCS管理領域は公開ソースではない。公開境界はworkflowとdistを別途検査する。
+const ignored=new Set(['.git','node_modules','dist','test-artifacts']);
 const oldName=['yo','ribi'].join('');
 const oldOwner=['nami','noto'].join('');
 const oldInternal=['birthday','-circle'].join('');
@@ -53,11 +54,17 @@ test('manifest, HTML and storage namespaces use only the anonymous demo identity
 });
 
 test('repository and build settings do not publish history or source maps',()=>{
-  assert.equal(existsSync(join(rootPath,'.git')),false);
+  const workflow=readFileSync(new URL('../.github/workflows/pages.yml',import.meta.url),'utf8');
+  assert.equal([...workflow.matchAll(/uses:\s*actions\/upload-pages-artifact@/g)].length,1);
+  assert.match(workflow,/uses:\s*actions\/upload-pages-artifact@[^\r\n]*\r?\n\s+with:\r?\n\s+path:\s*dist\s*(?:\r?\n|$)/);
+  assert.doesNotMatch(workflow,/uses:\s*actions\/upload-artifact@/);
   const vite=readFileSync(new URL('../vite.config.js',import.meta.url),'utf8');
   assert.match(vite,/sourcemap:\s*false/);
-  if(existsSync(join(rootPath,'dist')))for(const path of files(join(rootPath,'dist')))
-    assert.equal(path.endsWith('.map'),false,path);
+  if(existsSync(join(rootPath,'dist')))for(const path of files(join(rootPath,'dist'))){
+    const name=relative(join(rootPath,'dist'),path).replaceAll('\\','/');
+    assert.doesNotMatch(name,/(^|\/)\.git(?:\/|$)|(^|\/)\.git(?:ignore|modules|attributes)$/i,name);
+    assert.equal(name.endsWith('.map'),false,name);
+  }
 });
 
 test('application code contains no fixed external network request',()=>{
