@@ -1,0 +1,7 @@
+html[data-font-lab=lineseedjp] { --birthday-calendar-demo-dev-font:"Birthday Calendar Demo Font Lab lineseedjp"; }
+html[data-font-lab=zenkakugothicnew] { --birthday-calendar-demo-dev-font:"Birthday Calendar Demo Font Lab zenkakugothicnew"; }
+html[data-font-lab=notosansjp] { --birthday-calendar-demo-dev-font:"Birthday Calendar Demo Font Lab notosansjp"; }
+html[data-font-lab=mplus1p] { --birthday-calendar-demo-dev-font:"Birthday Calendar Demo Font Lab mplus1p"; }
+html[data-font-lab=zenmarugothic] { --birthday-calendar-demo-dev-font:"Birthday Calendar Demo Font Lab zenmarugothic"; }
+html[data-font-lab=notoserifjp] { --birthday-calendar-demo-dev-font:"Birthday Calendar Demo Font Lab notoserifjp"; }
+html[data-font-lab] body * { font-family:var(--birthday-calendar-demo-dev-font),Inter,"Hiragino Sans","Yu Gothic",Meiryo,system-ui,sans-serif!important; }

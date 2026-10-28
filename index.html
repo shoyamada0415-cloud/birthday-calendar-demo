@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#faf7f1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="架空データで安全に操作できる面談用の誕生日カレンダー">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Birthday Calendar Demo">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="./icons/favicon-48.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <title>Birthday Calendar Demo</title>
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark"><img src="./icons/icon-192.png" alt=""></span><div><strong><span id="brand-name">Birthday Calendar Demo</span> <span class="demo-badge">DEMO</span></strong><small>大切な人の、大切な日をそっとそばに。</small></div></div>
+      <button class="icon-button bell" id="bell" type="button" aria-label="通知を開く">🔔<span id="unread-badge" hidden>0</span></button>
+    </header>
+    <div class="update-banner" id="update-banner" role="status" aria-live="polite" hidden><span id="update-message">アップデートがあります。データは端末に残ります。</span><div class="update-actions"><button id="update-later" type="button">あとで</button><button id="update-app" type="button">更新する</button></div></div>
+    <main id="main">
+      <section class="view" id="view-home">
+        <section class="home-section" aria-labelledby="home-today-title"><div class="home-heading"><h2 id="home-today-title">今日の予定</h2><time id="home-today-date"></time></div><div class="home-list" id="home-today"></div></section>
+        <section class="home-section" aria-labelledby="home-next-title"><div class="home-heading"><h2 id="home-next-title">次の誕生日</h2></div><div class="home-list" id="home-next"></div></section>
+        <section class="home-section" aria-labelledby="home-upcoming-title"><div class="home-heading"><h2 id="home-upcoming-title">もうすぐ誕生日</h2><span id="home-upcoming-range">30日以内</span></div><div class="home-list" id="home-upcoming"></div></section>
+        <section class="home-section" aria-labelledby="home-anniversaries-title"><div class="home-heading"><h2 id="home-anniversaries-title">その他の近日記念日</h2><span id="home-anniversaries-range">14日以内</span></div><div class="home-list" id="home-anniversaries"></div></section>
+      </section>
+
+      <section class="view" id="view-calendar" hidden>
+        <div class="page-heading"><div><p class="eyebrow">CALENDAR</p><h1>誕生日・記念日カレンダー</h1></div><button class="quiet" id="calendar-today" type="button">今月へ</button></div>
+        <div class="calendar-layout">
+          <div class="panel calendar-panel"><div class="calendar-toolbar"><button class="icon-button" id="month-prev" type="button" aria-label="前月">‹</button><h2 id="month-title"></h2><button class="icon-button" id="month-next" type="button" aria-label="次月">›</button></div><div class="calendar-filters"><label class="calendar-category-filter"><span id="calendar-category-label">カテゴリ</span><select id="calendar-category"><option value="ALL">すべて</option></select></label><label class="calendar-category-filter"><span id="calendar-event-type-label">予定種類</span><select id="calendar-event-type"><option value="ALL">すべて</option><option value="BIRTHDAY">誕生日</option><option value="ANNIVERSARY">記念日</option></select></label></div><div class="selection-bar"><p class="selection-hint" id="selection-hint" role="status">日付をタップすると、その日の人物を確認できます。</p><button id="clear-selection" class="quiet" type="button" hidden>選択を解除</button></div><div class="calendar-grid" id="calendar-grid" role="grid" aria-label="月間カレンダー"></div></div>
+          <button class="quiet calendar-add" id="calendar-add" type="button" aria-haspopup="dialog" aria-controls="person-dialog">＋ 人物を追加</button>
+          <aside class="panel people-rail"><div class="section-heading compact"><h2>人物</h2><span id="rail-count"></span></div><div class="segmented"><button type="button" data-rail-filter="all" class="active">全員</button><button type="button" data-rail-filter="unregistered">未登録</button></div><p class="help">PCはアイコンをドラッグ。スマホは人物を選んで日付をタップできます。</p><div class="avatar-grid" id="person-rail"></div></aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-people" hidden>
+        <div class="page-heading"><div><p class="eyebrow">PEOPLE</p><h1>人物一覧</h1></div><button class="primary" id="people-add" type="button">＋ 追加</button></div>
+        <div class="panel filters"><label>検索<input id="people-search" type="search" placeholder="名前・ユーザー名・メモ"></label><label>カテゴリ<select id="people-category"><option value="ALL">すべて</option></select></label><label>月<select id="people-month"><option value="0">すべて</option></select></label><label>誕生日<select id="people-birthday"><option value="all">全員</option><option value="unregistered">未登録</option><option value="registered">登録済み</option></select></label><label>並び順<select id="people-sort"><option value="name">名前順</option><option value="next">次回誕生日順</option><option value="recent">最近編集した順</option></select></label></div>
+        <p class="result-count" id="people-count"></p><div class="people-list" id="people-list"></div>
+      </section>
+
+      <section class="view" id="view-birthdays" hidden>
+        <div class="page-heading"><div><p class="eyebrow">BIRTHDAYS</p><h1>誕生日一覧</h1></div></div>
+        <div class="panel filters"><label>月<select id="birthday-month"><option value="0">すべて</option></select></label><label>カテゴリ<select id="birthday-category"><option value="ALL">すべて</option></select></label></div>
+        <p class="help">今日から次に迎える誕生日が近い順です。</p><div class="stack" id="birthday-list"></div>
+      </section>
+
+      <section class="view" id="view-settings" hidden>
+        <div class="page-heading"><div><p class="eyebrow">SETTINGS</p><h1>設定とデータ</h1></div></div>
+        <div class="panel setting-card"><h2>表示言語</h2><p class="help">言語はこの端末に保存されます。</p><label class="language-picker"><select id="language-choice" aria-label="表示言語"><option value="ja">日本語</option><option value="en">English</option></select></label><div class="settings-update"><h3 id="app-version-label">アプリのバージョン</h3><p>Version <span id="app-version"></span></p><p id="settings-update-status" role="status" aria-live="polite">更新状況は未確認です。</p><div class="actions"><button class="quiet" id="settings-check-update" type="button">更新を確認</button><button class="primary" id="settings-apply-update" type="button" hidden>アップデートする</button></div></div></div>
+        <div class="panel setting-card"><h2>誕生日のお知らせ</h2><p class="help">アプリを開いた日に表示する通知です。外部Pushではありません。</p><form id="notification-settings"><label class="check"><input name="enabled" type="checkbox">通知をONにする</label><div class="check-grid"><label class="check"><input name="seven" type="checkbox">7日前</label><label class="check"><input name="three" type="checkbox">3日前</label><label class="check"><input name="one" type="checkbox">前日</label><label class="check"><input name="today" type="checkbox">当日</label></div><button class="primary" type="submit">設定を保存</button></form></div>
+        <div class="panel setting-card"><h2>バックアップと復元</h2><p class="help">人物・画像・通知・設定を暗号化バックアップ（.birthday-backup）に保存します。端末の故障・ブラウザデータ削除に備えて定期的に書き出してください。通常ZIPも読み込めます。</p><div class="actions"><button class="primary" id="export-backup" type="button">暗号化バックアップを作成</button><label class="file-button">バックアップから復元（通常ZIPも可）<input id="import-backup" type="file" hidden></label></div><div class="restore-preview" id="restore-preview" hidden></div><section class="transfer-guide" aria-labelledby="transfer-title"><h3 id="transfer-title">別の端末へデータを移す</h3><p id="transfer-intro">移行元の現在の状態を、移行先へ完全にコピーします。</p><p class="transfer-warning" id="transfer-not-sync">これは自動同期ではありません。変更後にもう一度移すには、新しいファイルを書き出してください。</p><p class="transfer-warning" id="transfer-replace">移行先のデータは移行元の保存内容に置き換わります。移行先だけにある人物も残りません。</p><div class="transfer-routes" role="group" aria-label="移行する端末の組み合わせ"><button type="button" data-transfer-route="phone-pc" aria-pressed="true">📱 → 💻 スマホからPCへ</button><button type="button" data-transfer-route="pc-phone" aria-pressed="false">💻 → 📱 PCからスマホへ</button><button type="button" data-transfer-route="phone-phone" aria-pressed="false">📱 → 📱 スマホからスマホへ</button><button type="button" data-transfer-route="pc-pc" aria-pressed="false">💻 → 💻 PCからPCへ</button></div><ol id="transfer-steps" class="transfer-steps"></ol><div class="actions"><button class="quiet" id="transfer-export" type="button">この端末のデータを書き出す</button><button class="primary" id="transfer-import" type="button">受け取ったファイルを選ぶ</button></div></section></div>
+        <div class="panel setting-card demo-reset-card"><h2>Demoデータの初期化</h2><p class="help">面談用Demoの人物・画像・通知だけを、5人の架空データへ戻します。</p><button class="danger-link" id="reset-demo-data" type="button">デモデータを初期状態に戻す</button></div>
+        <div class="panel setting-card"><h2>ストレージ管理</h2><div id="storage-stats" class="stats-list"></div><p class="help">アプリキャッシュだけを清掃できます。人物・画像・設定は消しません。</p><button class="quiet" id="clear-cache" type="button">不要なアプリキャッシュを削除</button></div>
+        <div class="privacy-note">このアプリはログイン・クラウド同期・X APIを使用しません。別端末へ移すときはZIPを使ってください。ブラウザの「サイトデータ削除」ではデータが失われます。</div>
+      </section>
+    </main>
+    <nav class="bottom-nav" aria-label="画面切り替え"><button type="button" data-tab="home"><span>⌂</span>ホーム</button><button type="button" data-tab="calendar"><span>▦</span>カレンダー</button><button type="button" data-tab="people"><span>♙</span>人物</button><button type="button" data-tab="birthdays"><span>◷</span>誕生日</button><button type="button" data-tab="settings"><span>⚙</span>設定</button></nav>
+  </div>
+
+  <dialog id="person-dialog" class="sheet"><div class="dialog-head"><div><p class="eyebrow">PERSON</p><h2 id="person-dialog-title">人物を追加</h2></div><button class="icon-button" type="button" data-close="person-dialog" aria-label="閉じる">×</button></div><form id="person-form" class="form-body"><input id="person-id" type="hidden"><label>表示名 <span class="required">必須</span><input id="person-name" maxlength="100" required></label><label>カテゴリ<select id="person-category"></select></label><label>作品名・所属<input id="person-series" maxlength="200"></label><div class="form-row"><label>誕生月<select id="person-birth-month"><option value="">未登録</option></select></label><label>誕生日<select id="person-birth-day"><option value="">未登録</option></select></label></div><div class="form-row"><div class="birth-year-field" role="group" aria-labelledby="birth-year-label"><span id="birth-year-label">誕生年（任意）</span><select id="person-birth-year-mode" aria-label="誕生年の入力方法"></select><select id="person-birth-year-choice" aria-labelledby="birth-year-label"></select><input id="person-birth-year" type="text" inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" aria-labelledby="birth-year-label" placeholder="例: 1998" hidden></div><label class="check aligned"><input id="person-show-age" type="checkbox">年齢を表示</label></div><label>X username（任意）<input id="person-username" maxlength="50" placeholder="@username"></label><label>XプロフィールURL（任意）<input id="person-x-url" type="url" placeholder="https://x.com/username"></label><label>プロフィール画像<input id="person-image" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><small>登録時に長辺512pxへ縮小・圧縮します。</small></label><label class="check" id="remove-image-wrap" hidden><input id="person-remove-image" type="checkbox">現在の画像を削除</label><label>メモ<textarea id="person-memo" rows="3" maxlength="5000"></textarea></label><div class="section-heading compact"><h3>その他の記念日</h3><button class="quiet" id="add-anniversary" type="button">＋ 追加</button></div><div id="anniversary-fields" class="repeat-fields"></div><div class="section-heading compact"><h3>関連URL</h3><button class="quiet" id="add-link" type="button">＋ 追加</button></div><div id="link-fields" class="repeat-fields"></div><p class="form-error" id="person-error" role="alert" hidden></p><div class="dialog-actions"><button class="danger-link" id="delete-person" type="button" hidden>人物を削除</button><button class="primary" type="submit">保存する</button></div></form></dialog>
+
+  <dialog id="detail-dialog" class="sheet"><div class="dialog-head"><div><p class="eyebrow">PROFILE</p><h2>人物の詳細</h2></div><button class="icon-button" type="button" data-close="detail-dialog" aria-label="閉じる">×</button></div><div id="detail-body" class="detail-body"></div><div class="dialog-actions"><button class="quiet" id="detail-edit" type="button">編集する</button><button class="primary" id="detail-choose" type="button">誕生日の日付を選ぶ</button><button class="quiet" id="day-assign" type="button" hidden></button><button class="primary" id="day-add" type="button" hidden>この日に登録</button></div></dialog>
+  <dialog id="notification-dialog" class="sheet"><div class="dialog-head"><div><p class="eyebrow">NOTIFICATIONS</p><h2>誕生日のお知らせ</h2></div><button class="icon-button" type="button" data-close="notification-dialog" aria-label="閉じる">×</button></div><p class="help">アプリを開いた日の通知です。Push通知ではありません。</p><button class="quiet" id="read-all" type="button">すべて既読</button><div class="stack" id="notification-list"></div></dialog>
+  <dialog id="avatar-crop-dialog" class="sheet crop-sheet" aria-labelledby="crop-title">
+    <div class="dialog-head"><h2 id="crop-title">画像の位置を調整</h2><button class="icon-button" id="crop-close" type="button" aria-label="トリミングをキャンセル">×</button></div>
+    <p class="help">指やマウスで移動、2本指または下のスライダーで拡大・縮小できます。円の内側がプロフィール画像に表示されます。</p>
+    <div id="crop-viewport" class="crop-viewport" tabindex="0" aria-label="画像を移動する領域。矢印キーでも調整できます"><div class="crop-guide" aria-hidden="true"></div></div>
+    <label class="crop-zoom">拡大・縮小<input id="crop-zoom" type="range" min="1" max="4" step="0.01" value="1"></label>
+    <p id="crop-error" class="form-error" role="alert" hidden></p>
+    <div class="dialog-actions"><button class="quiet" id="crop-cancel" type="button">キャンセル</button><button class="primary" id="crop-confirm" type="button">決定</button></div>
+  </dialog>
+  <dialog id="move-dialog" class="sheet" aria-labelledby="move-title" aria-describedby="move-description">
+    <div class="dialog-head"><h2 id="move-title">予定の日付を変更</h2></div>
+    <p id="move-description"></p><p id="move-error" class="form-error" role="alert" hidden></p>
+    <div class="dialog-actions"><button id="move-cancel" class="quiet" type="button">キャンセル</button><button id="move-confirm" class="primary" type="button">変更する</button></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

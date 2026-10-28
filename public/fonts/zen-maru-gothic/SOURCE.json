@@ -1,0 +1,61 @@
+{
+  "family": "Zen Maru Gothic",
+  "license": "SIL Open Font License 1.1",
+  "sourceCommit": "47d54ca1ebb14fd864695f1d39dc734f39017c33",
+  "acquiredAt": "2026-10-20T14:54:05.357Z",
+  "verifiedAt": "2026-10-21",
+  "unmodified": true,
+  "files": [
+    {
+      "filename": "OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/OFL.txt",
+      "bytes": 4402,
+      "sha256": "2a20cf7ce1909d8ee1e949095d340f7d7656705f7c810a2d6faf56800ad0cb3d"
+    },
+    {
+      "filename": "METADATA.pb",
+      "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/METADATA.pb",
+      "bytes": 2612,
+      "sha256": "ca7003349939baf51b9d493fc556be2a02bcae9adf954750b64968aeb0bef784"
+    },
+    {
+      "filename": "ZenMaruGothic-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/ZenMaruGothic-Regular.ttf",
+      "bytes": 3832756,
+      "sha256": "a0c0b53543e0993ae2225e629c833f3d51495ad31720694ff112ce4ce11111ef",
+      "weight": "400",
+      "version": [
+        "Version 1.002"
+      ],
+      "copyright": [
+        "Copyright 2021 The Zen Maru Gothic Authors (https://github.com/googlefonts/zen-marugothic)"
+      ]
+    },
+    {
+      "filename": "ZenMaruGothic-Medium.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/ZenMaruGothic-Medium.ttf",
+      "bytes": 3810988,
+      "sha256": "3cfdb98a13571ede17fcc769f5093a97c38b80a7b9b2ab754a26b4d822092b3b",
+      "weight": "500",
+      "version": [
+        "Version 1.001"
+      ],
+      "copyright": [
+        "Copyright 2021 The Zen Maru Gothic Authors (https://github.com/googlefonts/zen-marugothic)"
+      ]
+    },
+    {
+      "filename": "ZenMaruGothic-Bold.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/ZenMaruGothic-Bold.ttf",
+      "bytes": 3779008,
+      "sha256": "fe24426b9c8b5523a0146a8235c8674eccf0493af354a53ec895c3596d9eb745",
+      "weight": "700",
+      "version": [
+        "Version 1.001"
+      ],
+      "copyright": [
+        "Copyright 2021 The Zen Maru Gothic Authors (https://github.com/googlefonts/zen-marugothic)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+/* 比較コントロールだけの見た目。既存ホームの配色・余白・文字サイズは変えない。 */
+#font-lab-panel { position:fixed;z-index:30;left:10px;bottom:calc(80px + env(safe-area-inset-bottom));max-width:440px;width:calc(100% - 20px);
+  border:1px solid var(--line,#888);border-radius:8px;background:var(--surface,#fff);color:var(--ink,#222);font-size:13px;max-height:65dvh;overflow:auto; }
+#font-lab-panel,#font-lab-panel * { font-family:system-ui,sans-serif!important; }
+#font-lab-panel summary { padding:12px;min-height:44px;cursor:pointer; }
+#font-lab-panel label { display:grid;gap:8px;padding:12px; }
+#font-lab-panel select { font-size:16px;min-height:44px;max-width:100%; }
+#font-lab-panel p { margin:8px 12px;line-height:1.6; }
+#font-lab-credits { border-top:1px solid var(--line,#ccc); }
+#font-lab-credits p { font-size:11px; }

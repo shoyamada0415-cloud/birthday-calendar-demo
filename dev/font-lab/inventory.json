@@ -1,0 +1,290 @@
+{
+  "sourceCommit": "47d54ca1ebb14fd864695f1d39dc734f39017c33",
+  "reviewDate": "2026-10-20",
+  "acquiredAt": "2026-10-20T14:54:05.357Z",
+  "families": [
+    {
+      "id": "lineseedjp",
+      "name": "LINE Seed JP",
+      "credit": "© LY Corporation; LY Corporation, RixFont, Fontworks",
+      "files": [
+        {
+          "filename": "OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/lineseedjp/OFL.txt",
+          "bytes": 4322,
+          "sha256": "1cfc3752ddd076bc7d461b6680e42a345f2579f91319fa04192b754b3b993f65"
+        },
+        {
+          "filename": "METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/lineseedjp/METADATA.pb",
+          "bytes": 1265,
+          "sha256": "be2d2a87e375afde9dd80ea2d3e91c049d27ad1fa71eaf30b98a29205565a7cf"
+        },
+        {
+          "filename": "LINESeedJP-Regular.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/lineseedjp/LINESeedJP-Regular.ttf",
+          "bytes": 3673280,
+          "sha256": "04a6c0077ddb8ba5af3638bd76b4600708dde7b38df047b40fbe6f3af358d3c3",
+          "weight": "400",
+          "version": [
+            "Version 1.003"
+          ],
+          "copyright": [
+            "© LY Corporation"
+          ]
+        },
+        {
+          "filename": "LINESeedJP-Bold.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/lineseedjp/LINESeedJP-Bold.ttf",
+          "bytes": 3786144,
+          "sha256": "67aec2dc10b3ad210d6f7d53b33bbfea42ea28e32fa3834624eee699a638d5ff",
+          "weight": "700",
+          "version": [
+            "Version 1.010"
+          ],
+          "copyright": [
+            "© LY Corporation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zenkakugothicnew",
+      "name": "Zen Kaku Gothic New",
+      "credit": "© 2022 The Zen Kaku Gothic Project Authors; Yoshimichi Ohira",
+      "files": [
+        {
+          "filename": "OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenkakugothicnew/OFL.txt",
+          "bytes": 4401,
+          "sha256": "0fac78a235c98d640cb06332eb5362c211d86fa03c011df438c35005d22ad2c7"
+        },
+        {
+          "filename": "METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenkakugothicnew/METADATA.pb",
+          "bytes": 2631,
+          "sha256": "d1bd43c475dd673a67c210a6277fea8e61c4fcd29c546ac274791617da5c6473"
+        },
+        {
+          "filename": "ZenKakuGothicNew-Regular.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenkakugothicnew/ZenKakuGothicNew-Regular.ttf",
+          "bytes": 2360248,
+          "sha256": "b840cd07a67d89cacca44249ae49aa99ee7640eb5ce623be8d8983d6aabac801",
+          "weight": "400",
+          "version": [
+            "Version 1.002"
+          ],
+          "copyright": [
+            "Copyright 2022 The Zen Project Authors (https://github.com/googlefonts/zen-kakugothic)"
+          ]
+        },
+        {
+          "filename": "ZenKakuGothicNew-Medium.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenkakugothicnew/ZenKakuGothicNew-Medium.ttf",
+          "bytes": 2328176,
+          "sha256": "651a3f7280b7f36262601ee76d8388a8dc4372dcc67aff025a608939a562b525",
+          "weight": "500",
+          "version": [
+            "Version 1.002"
+          ],
+          "copyright": [
+            "Copyright 2022 The Zen Project Authors (https://github.com/googlefonts/zen-kakugothic)"
+          ]
+        },
+        {
+          "filename": "ZenKakuGothicNew-Bold.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenkakugothicnew/ZenKakuGothicNew-Bold.ttf",
+          "bytes": 2314424,
+          "sha256": "0081cedabc4921982fcd061f845a005664ac7fb642af2dd34b4007bc63ccd235",
+          "weight": "700",
+          "version": [
+            "Version 1.002"
+          ],
+          "copyright": [
+            "Copyright 2022 The Zen Project Authors (https://github.com/googlefonts/zen-kakugothic)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "notosansjp",
+      "name": "Noto Sans JP",
+      "credit": "© 2014–2021 Adobe; Google; Reserved Font Name: Source",
+      "files": [
+        {
+          "filename": "OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notosansjp/OFL.txt",
+          "bytes": 4388,
+          "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+        },
+        {
+          "filename": "METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notosansjp/METADATA.pb",
+          "bytes": 983,
+          "sha256": "5aa23f70fba3eb1afa6d92cb89de3b5c4690018caddbdded678b5e595e56825b"
+        },
+        {
+          "filename": "NotoSansJP[wght].ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf",
+          "bytes": 9589900,
+          "sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+          "weight": "100 900",
+          "version": [
+            "Version 2.004-H2;hotconv 1.0.118;makeotfexe 2.5.65603"
+          ],
+          "copyright": [
+            "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mplus1p",
+      "name": "M PLUS 1p",
+      "credit": "© 2016 The M+ Project Authors / The Rounded M+ Project Authors; Coji Morishita",
+      "files": [
+        {
+          "filename": "OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/mplus1p/OFL.txt",
+          "bytes": 4389,
+          "sha256": "da15da6b1496d4de18f97e2ad1b722ef8a1c121149c2c93b2cf7eac6ac27b35c"
+        },
+        {
+          "filename": "METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/mplus1p/METADATA.pb",
+          "bytes": 1987,
+          "sha256": "cd7c00c2cb5e1857b361410726adcd0a2634e73683c3545c6a6fd1dcfb586eb2"
+        },
+        {
+          "filename": "MPLUS1p-Regular.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/mplus1p/MPLUS1p-Regular.ttf",
+          "bytes": 1758688,
+          "sha256": "2f294ad496432b1608f070d310e3aa2adcf1de4af429f4901df97ec4bd361ed1",
+          "weight": "400",
+          "version": [
+            "Version 1.062"
+          ],
+          "copyright": [
+            "Copyright 2016 The M+ Project Authors."
+          ]
+        },
+        {
+          "filename": "MPLUS1p-Medium.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/mplus1p/MPLUS1p-Medium.ttf",
+          "bytes": 1758908,
+          "sha256": "28b2f52a40ae988064810b71d67e127df75a16e08d7df4e192d1006e4075394f",
+          "weight": "500",
+          "version": [
+            "Version 1.062"
+          ],
+          "copyright": [
+            "Copyright 2016 The M+ Project Authors."
+          ]
+        },
+        {
+          "filename": "MPLUS1p-Bold.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/mplus1p/MPLUS1p-Bold.ttf",
+          "bytes": 1766552,
+          "sha256": "76eb077b0a31ca33ca40238e47da5a17e2786741607cec09678d7d2e5ab1afc1",
+          "weight": "700",
+          "version": [
+            "Version 1.062"
+          ],
+          "copyright": [
+            "Copyright 2016 The M+ Project Authors."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zenmarugothic",
+      "name": "Zen Maru Gothic",
+      "credit": "© 2021 The Zen Maru Gothic Project Authors; Yoshimichi Ohira",
+      "files": [
+        {
+          "filename": "OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/OFL.txt",
+          "bytes": 4402,
+          "sha256": "2a20cf7ce1909d8ee1e949095d340f7d7656705f7c810a2d6faf56800ad0cb3d"
+        },
+        {
+          "filename": "METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/METADATA.pb",
+          "bytes": 2612,
+          "sha256": "ca7003349939baf51b9d493fc556be2a02bcae9adf954750b64968aeb0bef784"
+        },
+        {
+          "filename": "ZenMaruGothic-Regular.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/ZenMaruGothic-Regular.ttf",
+          "bytes": 3832756,
+          "sha256": "a0c0b53543e0993ae2225e629c833f3d51495ad31720694ff112ce4ce11111ef",
+          "weight": "400",
+          "version": [
+            "Version 1.002"
+          ],
+          "copyright": [
+            "Copyright 2021 The Zen Maru Gothic Authors (https://github.com/googlefonts/zen-marugothic)"
+          ]
+        },
+        {
+          "filename": "ZenMaruGothic-Medium.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/ZenMaruGothic-Medium.ttf",
+          "bytes": 3810988,
+          "sha256": "3cfdb98a13571ede17fcc769f5093a97c38b80a7b9b2ab754a26b4d822092b3b",
+          "weight": "500",
+          "version": [
+            "Version 1.001"
+          ],
+          "copyright": [
+            "Copyright 2021 The Zen Maru Gothic Authors (https://github.com/googlefonts/zen-marugothic)"
+          ]
+        },
+        {
+          "filename": "ZenMaruGothic-Bold.ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/zenmarugothic/ZenMaruGothic-Bold.ttf",
+          "bytes": 3779008,
+          "sha256": "fe24426b9c8b5523a0146a8235c8674eccf0493af354a53ec895c3596d9eb745",
+          "weight": "700",
+          "version": [
+            "Version 1.001"
+          ],
+          "copyright": [
+            "Copyright 2021 The Zen Maru Gothic Authors (https://github.com/googlefonts/zen-marugothic)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "notoserifjp",
+      "name": "Noto Serif JP",
+      "credit": "© 2012 Google Inc.; © 2017–2024 Adobe",
+      "files": [
+        {
+          "filename": "OFL.txt",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notoserifjp/OFL.txt",
+          "bytes": 4350,
+          "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+        },
+        {
+          "filename": "METADATA.pb",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notoserifjp/METADATA.pb",
+          "bytes": 1089,
+          "sha256": "265cb1cd38f7c12837feb5b26c59328ef7ff8f0b2b5683b1a47303c68d373622"
+        },
+        {
+          "filename": "NotoSerifJP[wght].ttf",
+          "url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/notoserifjp/NotoSerifJP%5Bwght%5D.ttf",
+          "bytes": 13574352,
+          "sha256": "2fd527ba12b6a44ec30d796d633360da0aeba6c5d4af1304ce12bb4dc15a7dfc",
+          "weight": "200 900",
+          "version": [
+            "Version 2.003-H1;hotconv 1.1.1;makeotfexe 2.6.0"
+          ],
+          "copyright": [
+            "(c) 2017-2024 Adobe (http://www.adobe.com/)."
+          ]
+        }
+      ]
+    }
+  ]
+}

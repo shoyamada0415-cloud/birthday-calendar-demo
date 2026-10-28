@@ -1,0 +1,17 @@
+{
+  "name": "Birthday Calendar Demo",
+  "short_name": "Birthday Calendar Demo",
+  "description": "架空データで安全に操作できる面談用の誕生日カレンダー",
+  "id": "./?app=birthday-calendar-demo",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf7f1",
+  "theme_color": "#faf7f1",
+  "lang": "ja",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "./icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

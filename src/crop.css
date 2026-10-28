@@ -1,0 +1,104 @@
+/* iOSの入力フォーカス時ズームを避ける。ピンチズーム自体は無効にしない。 */
+input:not([type=checkbox]):not([type=radio]):not([type=hidden]),
+select,
+textarea { font-size: 16px; }
+input::file-selector-button { font: inherit; }
+
+.image-preview { display: flex; align-items: center; gap: 12px; padding: 9px 0; color: var(--muted); font-size: .85rem; }
+.image-preview img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; background: var(--soft); }
+.crop-sheet { width: min(520px, calc(100vw - 24px)); max-height: 90dvh; overflow-y: auto; margin: auto; left: 0; right: 0; }
+.crop-sheet .dialog-head h2 { margin: 0; font-size: 1.25rem; }
+.crop-viewport { position: relative; width: min(100%, 320px); aspect-ratio: 1; margin: 14px auto; overflow: hidden; background: #ececf4; border: 1px solid var(--line); border-radius: 12px; touch-action: none; cursor: grab; }
+.crop-viewport:active { cursor: grabbing; }
+.crop-image { position: absolute; max-width: none; max-height: none; user-select: none; pointer-events: none; }
+.crop-guide { position: absolute; inset: 0; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 110px #17172587, inset 0 0 0 1px #27274766; pointer-events: none; }
+.crop-zoom { display: block; color: var(--ink); font-weight: 700; }
+.crop-zoom input { display: block; width: 100%; min-height: 44px; margin-top: 5px; accent-color: var(--brand); }
+.crop-sheet .dialog-actions { justify-content: space-between; }
+
+.update-banner { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; margin:0 0 14px; border:1px solid #bdb4f8; border-radius:12px; background:#f1eeff; color:var(--ink); }
+.update-banner[hidden] { display:none; }
+.update-actions { display:flex; gap:8px; flex-shrink:0; }
+.update-actions button { min-height:44px; border:1px solid var(--brand); border-radius:9px; padding:8px 12px; background:white; color:var(--brand); font:inherit; font-weight:700; }
+.update-actions #update-app { background:var(--brand); color:white; }
+.settings-update { margin-top:18px; padding-top:14px; border-top:1px solid var(--line); }
+.settings-update h3 { margin:0 0 6px; font-size:1rem; }
+.settings-update p { margin:6px 0 10px; }
+.settings-update .actions { display:flex; flex-wrap:wrap; gap:8px; }
+.settings-update button { min-height:44px; }
+.settings-update [hidden] { display:none; }
+.transfer-guide { margin-top:20px; padding-top:18px; border-top:1px solid var(--line); }
+.transfer-guide h3 { margin:0 0 8px; font-size:1.08rem; }
+.transfer-guide p { line-height:1.55; }
+.transfer-warning { padding:10px 12px; border-radius:10px; background:#fff8df; color:var(--ink); }
+.transfer-routes { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:14px 0; }
+.transfer-routes button { min-height:48px; padding:8px; border:1px solid var(--line); border-radius:10px; background:white; color:var(--ink); font:inherit; text-align:left; }
+.transfer-routes button[aria-pressed="true"] { border-color:var(--brand); background:#f0eeff; font-weight:700; }
+.transfer-steps { margin:0 0 14px; padding-left:1.5rem; line-height:1.6; }
+.transfer-steps li { padding:3px 0; }
+.transfer-guide .actions button { min-height:44px; }
+.calendar-category-filter { display:flex; align-items:center; gap:10px; margin:12px 0 4px; color:var(--muted); font-size:.9rem; font-weight:700; }
+.calendar-category-filter select, .language-picker select { min-height:44px; min-width:160px; border:1px solid var(--line); border-radius:9px; padding:7px 10px; background:white; color:var(--ink); }
+.language-picker select { width:100%; }
+@media(max-width:520px) {
+  .update-banner { flex-direction:column; align-items:stretch; }
+  .update-actions { justify-content:flex-end; }
+  .calendar-category-filter select { flex:1; min-width:0; }
+  .transfer-routes { grid-template-columns:1fr; }
+  .transfer-guide .actions button { width:100%; }
+}
+
+.calendar-filters { display:flex; flex-wrap:wrap; gap:8px 16px; }
+.calendar-filters .calendar-category-filter { flex:1 1 160px; min-width:0; }
+.calendar-filters select { max-width:100%; }
+.day-cell .day-open { width:100%; min-height:28px; padding:0 2px; border:0; background:transparent; color:inherit; text-align:left; }
+#detail-dialog .dialog-actions { flex-wrap:wrap; }
+#detail-dialog #day-add { min-height:44px; }
+.day-cell .day-avatars { display:flex; flex-direction:column; gap:3px; width:100%; min-width:0; }
+.calendar-grid .day-cell, .calendar-grid .day-spacer { height:208px; min-height:0; max-height:208px; overflow:hidden; }
+.day-cell > *, .day-cell .calendar-event, .day-cell .more { flex-shrink:0; }
+.day-cell .day-avatars { flex:1; min-height:0; overflow:hidden; }
+.selection-bar { display:flex; align-items:center; gap:8px; min-height:56px; margin:8px 0; }
+.selection-bar .selection-hint { flex:1; min-width:0; margin:0; overflow-wrap:anywhere; }
+.selection-bar button { flex:none; padding:8px; }
+.avatar-person, .person-card, .calendar-event { user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; touch-action:pan-y; }
+.avatar-person img, .person-card img, .calendar-event img { pointer-events:none; -webkit-user-drag:none; }
+.person-card.selected { outline:2px solid var(--brand); background:#f1eeff; }
+.calendar-event.dragging { opacity:.4; }
+.drag-ghost { position:fixed; width:70px; min-height:44px; z-index:100; pointer-events:none; opacity:.9; box-shadow:0 4px 18px #24253a55; }
+.drag-ghost .event-name { display:none; }
+.day-cell.drop-target { outline:3px solid var(--brand); outline-offset:-3px; background:#e8e2ff; }
+#person-rail > .empty, #people-list > .empty { grid-column:1 / -1; width:100%; min-width:0; writing-mode:horizontal-tb; overflow-wrap:normal; word-break:normal; padding:20px 10px; }
+#move-description { overflow-wrap:anywhere; line-height:1.7; }
+.calendar-event { display:flex; align-items:center; gap:5px; min-width:0; width:100%; min-height:40px;
+  padding:3px; border:1px solid transparent; border-radius:9px; background:#edf1ff; color:#343b74;
+  font-size:11px; line-height:1.35; text-align:left; }
+.calendar-event.anniversary-event { background:#fff0f4; color:#8c3155; }
+.calendar-event:hover { border-color:var(--brand); }
+.calendar-event .event-avatar { position:relative; display:block; width:32px; max-width:100%; flex:none; }
+.day-cell .calendar-event .avatar { width:100%; height:auto; aspect-ratio:1; font-size:14px; }
+.calendar-event .avatar img { object-fit:cover; }
+.calendar-event .event-mark { position:absolute; right:-1px; bottom:-1px; display:grid; place-items:center;
+  width:16px; height:16px; border-radius:50%; background:white; font-size:11px; line-height:1; }
+.calendar-event .event-name { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.day-cell .more { align-self:stretch; min-height:28px; padding:1px; border:0; border-radius:6px;
+  background:#f0eeff; color:#5848d2; font:inherit; font-size:11px; font-weight:700; }
+.anniversary-edit { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)) auto; align-items:end; }
+.anniversary-edit > label:first-child { grid-column:1 / -1; }
+.anniversary-edit > label.check { display:flex; align-items:center; gap:5px; min-width:0; font-size:.88rem; }
+.anniversary-edit > label.check input { flex:none; }
+.anniversary-edit > button { grid-column:4; grid-row:2 / 4; }
+.anniversary-hint { grid-column:1 / -1; color:var(--muted); }
+@media(max-width:520px) {
+  .calendar-event .event-name { display:none; }
+  .calendar-grid .day-cell, .calendar-grid .day-spacer { height:156px; max-height:156px; }
+  #view-calendar .page-heading h1 { font-size:clamp(1rem,4.8vw,1.2rem); }
+  #calendar-today { flex-shrink:0; white-space:nowrap; }
+  #detail-dialog #day-add, #detail-dialog #day-assign { width:100%; }
+  .calendar-event { justify-content:center; min-height:40px; padding:2px 0; }
+  .calendar-event .event-avatar { width:30px; }
+  .calendar-event .event-mark { width:14px; height:14px; font-size:10px; }
+  .anniversary-edit { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .anniversary-edit > button { grid-column:2; grid-row:auto; justify-self:end; }
+  .anniversary-edit > label.check { grid-column:1 / -1; }
+}

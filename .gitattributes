@@ -1,0 +1,3 @@
+# フォント原本・権利文書のSHA-256をWindows checkoutでも維持する。
+public/fonts/zen-maru-gothic/* -text
+*.ttf binary

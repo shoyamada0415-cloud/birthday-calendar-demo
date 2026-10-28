@@ -1,0 +1,27 @@
+// Translated display resources only; never store passwords or user data here.
+export const lifecycleMessages={
+  ja:{
+    deleteWorking:'削除の安全性を確認・処理しています…',
+    deleteTitle:'この端末の管理データを削除',deleteThisDevice:'この端末のデータを削除',
+    deleteTargets:'人物・画像・誕生日・記念日・通知・設定、Birthday Calendar Demo専用キャッシュとService Worker登録を削除します。先に必要な暗号化バックアップを保存し、他のBirthday Calendar Demo画面はすべて閉じてください。',
+    deleteExcluded:'書き出し済みZIP・暗号化バックアップ、パスワードマネージャー、OSやブラウザの一部キャッシュ、別アプリのデータは削除できません。空のDB構造と、再作成防止用の個人情報を含まない停止フラグは残します。端末全体の消去や完全な物理消去を保証する機能ではありません。',
+    deleteBackupConfirm:'削除は元に戻せません。必要な暗号化バックアップを保存しましたか？不要と判断した場合も含め、削除手順へ進みますか？',deleteWindowsConfirm:'この画面以外のBirthday Calendar Demoのタブ・ウィンドウ・ホーム画面アプリをすべて閉じましたか？旧版も閉じ、削除が終わるまで開かないでください。',deletePrompt:'人物・画像・記念日・通知・設定を削除します。実行するには「削除」と入力してください。',deleteWord:'削除',
+    deleteOtherWindows:'他のBirthday Calendar Demo画面を閉じて再試行してください。まだ削除していません。',deleteUnavailable:'安全な排他確認や停止フラグの保存ができません。対応ブラウザで最新版へ更新し、他のBirthday Calendar Demo画面を閉じて再試行してください。削除を開始できません。',deleteRecordsFailed:'データの削除を完了できませんでした。',
+    deleteDone:'管理データの削除を確認しました',deleteStopped:'Birthday Calendar Demoは停止しています。削除結果を確認してください',deleteNoRestart:'データの自動再作成を防ぐため、この画面ではアプリを起動しません。結果が不完全または未確認の場合は、他のBirthday Calendar Demo画面を閉じて明示的に再試行してください。',deleteRetry:'削除を再確認して再試行',delete_dataDeleted:'人物・画像・通知・設定',delete_cachesDeleted:'専用Cache Storage',delete_workerRemoved:'専用Service Worker登録',delete_preferencesDeleted:'既知の更新確認用保存キー',deleteVerified:'削除確認済み',deleteIncomplete:'未完了・要確認',
+    endUseTitle:'利用を終了する',endUseHelp:'必要な暗号化バックアップを保存 → この端末のデータを削除 → 削除結果を確認 → 必要ならOS側でホーム画面アプリを削除します。アプリからアンインストールを強制実行することはできません。',devicePlatform:'利用環境',platform_ios:'iPhone / iOS',platform_android:'Android',platform_pc:'PCブラウザ',
+    uninstall_ios:'削除結果を確認してから、ホーム画面のBirthday Calendar Demoアイコンを長押しし、表示される削除・取り除く操作を確認してください。iOSや追加方法で表示が異なります。Safariのサイトデータ全体の削除は、同じホストの別アプリへ影響するため案内しません。',
+    uninstall_android:'削除結果を確認してから、ホーム画面アイコンの長押しや端末のアプリ設定で削除操作を確認してください。端末・Chrome・インストール方法によって、ショートカットを取り除くだけの場合とアンインストールできる場合があります。',
+    uninstall_pc:'削除結果を確認してから、インストール済みPWAならブラウザのアプリ管理メニューなどで削除操作を確認してください。通常のブラウザ利用ならタブやブックマークを閉じます。操作名はブラウザ・OSによって異なります。',
+  },
+  en:{
+    deleteWorking:'Checking safety and deleting…',
+    deleteTitle:'Delete managed data on this device',deleteThisDevice:'Delete this device’s data',deleteTargets:'Delete people, images, birthdays, anniversaries, notifications, settings, Birthday Calendar Demo-only caches and its Service Worker registration. Save an encrypted backup first if needed, and close all other Birthday Calendar Demo windows.',
+    deleteExcluded:'This cannot delete exported ZIPs or encrypted backups, password-manager entries, some OS/browser caches or other apps’ data. The empty database schema and a non-personal stop flag remain to prevent automatic recreation. This is not a whole-device wipe or a guarantee of physical erasure.',
+    deleteBackupConfirm:'Deletion cannot be undone. Have you saved any encrypted backup you need? Continue only after saving it or deciding it is not needed.',deleteWindowsConfirm:'Have you closed every other Birthday Calendar Demo tab, window and installed app, including old versions? Do not reopen them until deletion finishes.',deletePrompt:'Delete people, images, anniversaries, notifications and settings. Type DELETE to continue.',deleteWord:'DELETE',deleteOtherWindows:'Close other Birthday Calendar Demo windows and retry. Nothing has been deleted yet.',deleteUnavailable:'Safe exclusivity or the persistent stop flag is unavailable. Update to the latest app in a supported browser and close other Birthday Calendar Demo windows before retrying. Deletion could not start.',deleteRecordsFailed:'Could not finish deleting the data.',
+    deleteDone:'Managed data deletion verified',deleteStopped:'Birthday Calendar Demo is stopped. Check the deletion result',deleteNoRestart:'The app will not start here, to prevent automatic data recreation. If the result is incomplete or unknown, close other Birthday Calendar Demo windows and explicitly retry.',deleteRetry:'Review and retry deletion',delete_dataDeleted:'People, images, notifications and settings',delete_cachesDeleted:'Dedicated Cache Storage',delete_workerRemoved:'Dedicated Service Worker registration',delete_preferencesDeleted:'Known update-check storage keys',deleteVerified:'Deletion verified',deleteIncomplete:'Incomplete or unverified',
+    endUseTitle:'Stop using Birthday Calendar Demo',endUseHelp:'Save an encrypted backup if needed → delete this device’s managed data → check the result → optionally remove the installed app using your OS. Birthday Calendar Demo cannot force an uninstall.',devicePlatform:'Your device',platform_ios:'iPhone / iOS',platform_android:'Android',platform_pc:'PC browser',
+    uninstall_ios:'After checking the result, touch and hold Birthday Calendar Demo’s Home Screen icon and review the remove/delete options. Labels vary by iOS version and installation method. Do not clear all Safari website data: it may affect other apps on the same host.',
+    uninstall_android:'After checking the result, review remove options by holding the Home Screen icon or using device app settings. Depending on your device, Chrome and installation method, this may remove a shortcut or uninstall an app.',
+    uninstall_pc:'After checking the result, an installed PWA can usually be removed through the browser’s app-management menu. For ordinary browser use, close the tab or remove the bookmark. Exact steps vary by browser and OS.',
+  }
+};

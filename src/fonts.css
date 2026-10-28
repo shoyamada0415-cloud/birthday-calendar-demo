@@ -1,0 +1,28 @@
+/* 原配布のTTFをそのままセルフホスト。Viteが相対baseに合わせてURLを出力する。 */
+@font-face {
+  font-family:'Zen Maru Gothic'; font-style:normal; font-weight:400; font-display:swap;
+  src:url('/fonts/zen-maru-gothic/ZenMaruGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family:'Zen Maru Gothic'; font-style:normal; font-weight:500; font-display:swap;
+  src:url('/fonts/zen-maru-gothic/ZenMaruGothic-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family:'Zen Maru Gothic'; font-style:normal; font-weight:700; font-display:swap;
+  src:url('/fonts/zen-maru-gothic/ZenMaruGothic-Bold.ttf') format('truetype');
+}
+:root {
+  --app-font:'Zen Maru Gothic','Hiragino Sans','Yu Gothic',Meiryo,system-ui,sans-serif;
+  font-family:var(--app-font); font-weight:400;
+}
+/* フォームは既存のfont:inheritを使用。バッジのsystem-ui指定も統一する。 */
+.bell span { font-family:var(--app-font); }
+h1,h2,h3,h4,h5,h6 { font-weight:500; }
+button,.primary,.quiet,.file-button,.danger-link,.bottom-nav button,
+.segmented button.active,.update-actions button,.transfer-routes button[aria-pressed=true],
+.avatar,.item-row strong,.person-card strong,.detail-top h3,.setting-section > summary {
+  font-weight:500;
+}
+.brand strong,.notification-item .unread-label { font-weight:700; }
+.weekday,.day-cell .day-number,.pill,.filters label,.form-body label,
+.calendar-category-filter,.crop-zoom { font-weight:400; }
